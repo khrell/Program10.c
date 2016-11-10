@@ -15,7 +15,7 @@ typedef enum  {TRUE,FALSE} boolean_t;
 
 
 boolean_t is_letter(char letter);
-int count_words(char string1[], int i);
+int count_words(char string1[]);
 
 
 int main()
@@ -25,10 +25,11 @@ int main()
 	is_letter(letter);
 	
 	//part 3
-	char string1[200];
-	int i = 0;
-	int count = count_words(string1,i);
-	printf("Length of string: %d\n", count);
+	//char string1[30] = "this isn’t 32 some; thing";
+	char string1[100] = "this is a test of the test tmp";
+	int z = count_words(string1);
+	printf("\nPart 3:\n");
+	printf("Number of words in the string: %d\n\n", z);
 
 	return 0;
 }
@@ -38,6 +39,7 @@ boolean_t is_letter(char letter)
 	//two variables created for return
 	boolean_t myBoolTrue = { TRUE };
 	boolean_t myBoolFalse = { FALSE };
+	printf("\nPart 2:\n");
 	printf("Please enter a single character of the alphabet: ");
 		scanf("%s", &letter);
 
@@ -54,22 +56,21 @@ boolean_t is_letter(char letter)
 		}
 }
 
-//part 3
-int count_words(char string1[], int i)
+//part 3 Word Counting Loop
+int count_words(char string1[])
 {
+	int i = 0;
+	int tmp = 0; //loop counter index
 
-	int count = 0;
-	int x = '\0';
-	printf("Enter a string: ");
-	scanf("%s", string1);
-
-	while (string1[i] != x)
+	//loop for counting the words
+	for (i = 0; string1[i] != '\0'; i++)
 	{
-		if (string1[i] == ' ')
 		{
-			count++;
-		}		
+			if (string1[i] == ' ')
+
+				tmp++;
+		}
 	}
-	return count;
+	return tmp;
 }
 
