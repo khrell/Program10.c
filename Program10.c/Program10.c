@@ -36,7 +36,8 @@ int main()
 	double s;
 	
 	double y = convert_to_double();
-	printf("The number converted to a double: %f\n", y);
+	printf("The number converted to a double: %f\n\n", y);
+
 
 	return 0;
 }
@@ -84,10 +85,11 @@ int count_words(char string1[])
 //Part 4 Convert to Double
 double convert_to_double()
 {
-	double s1 = 0.0;
-	char input[10];
+	double d = 0.0;
+	char z[10];
+	printf("Part 4\n");
 	printf("Enter up to a nine digit number: ");
-	scanf("%s",input);
-	s1 = atof(input);
-	return s1;
+	scanf("%s", z);
+	sscanf(z, "%lf", &d);
+	return d;
 }
