@@ -11,11 +11,13 @@ Date: 11-8-16
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 typedef enum  {TRUE,FALSE} boolean_t;
 
 
 boolean_t is_letter(char letter);
 int count_words(char string1[]);
+double convert_to_double(double s);
 
 
 int main()
@@ -25,11 +27,16 @@ int main()
 	is_letter(letter);
 	
 	//part 3
-	//char string1[30] = "this isn’t 32 some; thing";
 	char string1[100] = "this is a test of the test tmp";
 	int z = count_words(string1);
 	printf("\nPart 3:\n");
 	printf("Number of words in the string: %d\n\n", z);
+
+	//Part 4	
+	double s;
+	
+	double y = convert_to_double(s);
+	printf("The number converted to a double: %f", y);
 
 	return 0;
 }
@@ -56,7 +63,7 @@ boolean_t is_letter(char letter)
 		}
 }
 
-//part 3 Word Counting Loop
+//Part 3 Word Counting Loop
 int count_words(char string1[])
 {
 	int i = 0;
@@ -74,3 +81,14 @@ int count_words(char string1[])
 	return tmp;
 }
 
+//Part 4 Convert to Double
+double convert_to_double(double s)
+{
+	double s1;
+	char input[9];
+	printf("Enter up to a nine digit number: ");
+	gets(input);
+	s1 = atof(input);
+	
+	return s1;
+}
