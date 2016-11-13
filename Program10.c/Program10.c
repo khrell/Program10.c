@@ -17,7 +17,7 @@ typedef enum  {TRUE,FALSE} boolean_t;
 
 boolean_t is_letter(char letter);
 int count_words(char string1[]);
-double convert_to_double(double s);
+double convert_to_double();
 
 
 int main()
@@ -35,8 +35,8 @@ int main()
 	//Part 4	
 	double s;
 	
-	double y = convert_to_double(s);
-	printf("The number converted to a double: %f", y);
+	double y = convert_to_double();
+	printf("The number converted to a double: %f\n", y);
 
 	return 0;
 }
@@ -82,13 +82,12 @@ int count_words(char string1[])
 }
 
 //Part 4 Convert to Double
-double convert_to_double(double s)
+double convert_to_double()
 {
-	double s1;
-	char input[9];
+	double s1 = 0.0;
+	char input[10];
 	printf("Enter up to a nine digit number: ");
-	gets(input);
+	scanf("%s",input);
 	s1 = atof(input);
-	
 	return s1;
 }
